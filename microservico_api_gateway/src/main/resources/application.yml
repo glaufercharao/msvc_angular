@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: microservico_api_gateway
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+zuul:
+  routes:
+    usuarios:
+      service-id: microservico_usuarios
+      path: /api/usuarios/**
